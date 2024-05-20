@@ -1,0 +1,321 @@
+:root {
+    font-size: 22px;
+
+    --forest-color: rgb(59, 142, 62);
+    --town-color: rgb(177, 48, 48);
+    --farm-color: rgb(255, 235, 53);
+    --water-color: rgb(89, 210, 236);
+    --mountain-color: rgb(174, 119, 68);
+    --empty-color: rgb(239, 226, 179);
+
+    --spring-color: rgb(105, 190, 108);
+    --summer-color: rgb(254, 232, 116);
+    --fall-color: rgb(234, 189, 148);
+    --winter-color: rgb(89, 210, 236);
+
+    --spring-border-color: rgb(59, 142, 62);
+    --summer-border-color: rgb(221, 187, 8);
+    --fall-border-color: rgb(130, 85, 42);
+    --winter-border-color: rgb(49, 144, 165);
+}
+
+* {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    padding: 5vh 0 0 0;
+    margin: 0 6vw;
+
+    background-color: rgb(233, 233, 233);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    margin: 1.6rem 0;
+}
+
+#map-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#map {
+    transition: box-shadow cubic-bezier(0.77, 0, 0.175, 1) .5s;
+
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 35vw;
+    height: 35vw;
+    table-layout: fixed;
+}
+
+#map td {
+    transition: border-color cubic-bezier(0, 1, 0, 1) .05s;
+    border-radius: 0.22rem;
+    border-width: 0.28rem;
+    border-style: solid;
+}
+
+td.forest {
+    background-color: var(--forest-color);
+    border-color: var(--forest-color);
+}
+
+td.town {
+    background-color: var(--town-color);
+    border-color: var(--town-color);
+}
+
+td.farm {
+    background-color: var(--farm-color);
+    border-color: var(--farm-color);
+}
+
+td.water {
+    background-color: var(--water-color);
+    border-color: var(--water-color);
+}
+
+td.mountain {
+    background-color: var(--mountain-color);
+    border-color: var(--mountain-color);
+}
+
+td.empty {
+    background-color: var(--empty-color);
+    border-color: var(--empty-color);
+}
+
+td {
+    background-color: white;
+    border-color: white;
+}
+
+#info-container {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+#seasons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#seasons>div {
+    padding: 1.1rem 0;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-width: 0.2rem;
+    border-style: solid;
+    border-radius: 0.5rem;
+}
+
+#seasons p {
+    margin: 0;
+}
+
+#seasons>div>p:first-of-type {
+    font-weight: 700;
+}
+
+#spring-box {
+    background-color: var(--spring-color);
+    border-color: var(--spring-border-color);
+}
+
+#summer-box {
+    background-color: var(--summer-color);
+    border-color: var(--summer-border-color);
+}
+
+#fall-box {
+    background-color: var(--fall-color);
+    border-color: var(--fall-border-color);
+}
+
+#winter-box {
+    background-color: var(--winter-color);
+    border-color: var(--winter-border-color);
+}
+
+#score-info,
+#season-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#score-info p,
+#season-info p {
+    margin: 0.7rem;
+}
+
+#missions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.mission-card {
+    transition: filter cubic-bezier(0.77, 0, 0.175, 1) .5s;
+
+    padding: 0.8rem 0.8rem;
+    margin: 0.5rem;
+
+    width: 40%;
+    box-sizing: border-box;
+
+    background-color: rgb(54, 54, 54);
+    border: 0.25rem solid rgb(54, 54, 54);
+    border-radius: 0.4rem;
+
+    color: white;
+    flex-grow: 1;
+    filter: opacity(50%);
+
+    text-align: justify;
+}
+
+.mission-card.active {
+    filter: none;
+}
+
+.mission-card p {
+    margin: 0;
+}
+
+.mission-card>.title-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mission-card>.title-row>p {
+    font-weight: 700;
+}
+
+.mission-card span:not(.title) {
+    font-size: 0.6rem;
+    line-height: 0;
+}
+
+#pieces {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#pieces>#next-piece>table {
+    margin: 0 1.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 10vw;
+    height: 10vw;
+    background-color: white;
+}
+
+#pieces td {
+    border-radius: 0.25rem;
+    border-width: 0.15rem;
+    border-style: solid;
+}
+
+#next-piece {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#next-piece p {
+    margin: 0.5rem;
+}
+
+#move-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#move-buttons>div,
+#stuck-button {
+    font-size: 0.9rem;
+    background-color: white;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.9rem 0.9rem 0;
+    border-radius: 0.4rem;
+    user-select: none;
+}
+
+#move-buttons>div:hover,
+#stuck-button {
+    cursor: pointer;
+}
+
+.empty.previewed-forest {
+    border-color: var(--forest-color) !important;
+}
+
+.empty.previewed-town {
+    border-color: var(--town-color) !important;
+}
+
+.empty.previewed-farm {
+    border-color: var(--farm-color) !important;
+}
+
+.empty.previewed-water {
+    border-color: var(--water-color) !important;
+}
+
+.empty.previewed-mountain {
+    border-color: var(--mountain-color) !important;
+}
+
+.empty.previewed-empty {
+    border-color: var(--empty-color) !important;
+}
+
+.spring-glow {
+    box-shadow: 0 0 1.5rem 0.5rem var(--spring-color);
+}
+
+.summer-glow {
+    box-shadow: 0 0 1.5rem 0.5rem var(--summer-color);
+}
+
+.fall-glow {
+    box-shadow: 0 0 1.5rem 0.5rem var(--fall-color);
+}
+
+.winter-glow {
+    box-shadow: 0 0 1.5rem 0.5rem var(--winter-color);
+}
+
+@media screen and (max-width: 1499px) {
+    :root {
+        font-size: 16px;
+    }
+}

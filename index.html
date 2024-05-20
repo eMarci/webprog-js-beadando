@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>A térképész - Endrédi Márton</title>
+    </head>
+
+    <body>
+        <div id="map-container">
+            <div id="title">
+                <h1>Burgonya térkép</h1>
+            </div>
+            <table id="map" class="spring-glow"></table>
+        </div>
+        <div id="info-container">
+            <div id="seasons">
+                <div id="spring-box">
+                    <p>Tavasz</p>
+                    <p><span id="spring-score">0</span> pont</p>
+                </div>
+                <div id="summer-box">
+                    <p>Nyár</p>
+                    <p><span id="summer-score">0</span> pont</p>
+                </div>
+                <div id="fall-box">
+                    <p>Ősz</p>
+                    <p><span id="fall-score">0</span> pont</p>
+                </div>
+                <div id="winter-box">
+                    <p>Tél</p>
+                    <p><span id="winter-score">0</span> pont</p>
+                </div>
+            </div>
+            <div id="score-info">
+                <p>Összesen: <span id="total-score">0</span> pont</p>
+            </div>
+            <div id="season-info">
+                <p>Jelenlegi évszak: <span id="current-season">Tavasz</span></p>
+                <p>Évszakból hátralevő idő: <span id="time-left">7</span>/7</p>
+            </div>
+            <div id="missions">
+                <div class="mission-card">
+                    <div class="title-row">
+                        <p><span class="title"></span></p>
+                        <span>(<span id="m0-score"></span> pont)</span>
+                    </div>
+                    <span class="description"></span>
+                </div>
+                <div class="mission-card">
+                    <div class="title-row">
+                        <p><span class="title"></span></p>
+                        <span>(<span id="m1-score"></span> pont)</span>
+                    </div>
+                    <span class="description"></span>
+                </div>
+                <div class="mission-card">
+                    <div class="title-row">
+                        <p><span class="title"></span></p>
+                        <span>(<span id="m2-score"></span> pont)</span>
+                    </div>
+                    <span class="description"></span>
+                </div>
+                <div class="mission-card">
+                    <div class="title-row">
+                        <p><span class="title"></span></p>
+                        <span>(<span id="m3-score"></span> pont)</span>
+                    </div>
+                    <span class="description"></span>
+                </div>
+            </div>
+            <div id="pieces">
+                <div id="next-piece">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Idő: <span id="next-piece-time">0</span> egység</p>
+                </div>
+                <div id="move-buttons">
+                    <div id="rotate-button">
+                        Forgatás
+                    </div>
+                    <div id="hmirror-button">
+                        Tükrözés<br>vízszintesen
+                    </div>
+                    <div id="vmirror-button">
+                        Tükrözés<br>függőlegesen
+                    </div>
+                </div>
+                <div id="stuck-button">
+                    Nem tudom elhelyezni!
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>
